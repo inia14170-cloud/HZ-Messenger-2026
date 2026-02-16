@@ -1,7 +1,10 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
-    <style name="Theme.HZMessenger"
-        parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.HZMessenger" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@android:color/holo_blue_dark</item>
+        <item name="colorPrimaryVariant">@android:color/holo_blue_dark</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@android:color/holo_blue_light</item>
     </style>
 
 </resources>
