@@ -1,10 +1,24 @@
-# HZ Messenger
+# HZ Messenger (TDLib + Compose)
 
-Android app template that builds a signed **Release APK** on every push using **GitHub Actions** and publishes it in **GitHub Releases**.
+Минимальный Telegram-клиент на TDLib с UI на Jetpack Compose (Material 3):
 
-## Download APK
-Open the **Releases** tab in your GitHub repo and download the latest APK.
+- Вход по номеру телефона → код → (если нужно) пароль 2FA
+- Список чатов
+- Экран чата и отправка текстовых сообщений
+- Сборка APK на GitHub Actions и раздача через Releases/Artifacts
 
-## Notes
-- The release build is signed with the default debug signing config for simplicity (works for APK installs outside Play).
-- If you later want a persistent signing key (so updates install over previous versions), we can switch to a real keystore stored in GitHub Secrets.
+## Настройка ключей Telegram
+
+В GitHub Repo → **Settings → Secrets and variables → Actions** добавь:
+
+- `TG_API_ID`
+- `TG_API_HASH`
+
+Ключи берутся на `my.telegram.org/apps`.
+
+## Сборка APK
+
+Пуш в `main` запускает GitHub Actions workflow.
+Скачивай APK из **Actions → Artifacts** или из **Releases**.
+
+> Сборка по умолчанию делает `assembleDebug`, чтобы APK устанавливался без keystore.
